@@ -149,21 +149,21 @@
 
 * To setup ns3 network simulation environment (build is optional)
 
-  * **IMPORTANT**: Before the first build of ns3, configure it to include examples and tests, enable sudo, and optimize the build. Examples include modules for simulation, **tap-matrix-sst** and **tap-mixed-sst**.
+  * **IMPORTANT**: Before the first build of ns3, configure it to include examples and tests, enable sudo and python bindings, and optimize the build. Examples include modules for simulation, **tap-matrix-sst** and **tap-mixed-sst**.
     ```
-    ./waf configure --build-profile=optimized --enable-examples --enable-tests --enable-sudo
+    ./ns3 configure --build-profile=optimized --enable-examples --enable-tests --enable-sudo --enable-python-bindings
     ```
 
   * To edit the simulator source code, see inside **$TAP** (**$NS3/src/tap-bridge/examples**) and look into simulation files (e.g., **tap-matrix-sst.cc**, **tap-mixed-sst.cc**)
     ```
     cd $NS3
-    ./waf build
+    ./ns3 build
     
     # To use matrix propagation loss for wifi connections
-    ./waf --run tap-matrix-sst --command-template="%s $LXC/tapConfigs.txt"
+    ./ns3 run tap-matrix-sst --command-template="%s $LXC/tapConfigs.txt"
     
     # To use positions in x,y,z coordinates for wifi connections
-    ./waf --run tap-mixed-sst --command-template="%s $LXC/tapConfigs.txt"
+    ./ns3 run tap-mixed-sst --command-template="%s $LXC/tapConfigs.txt"
     ```
 
 * To run linux containers (LXCs) for experiments
