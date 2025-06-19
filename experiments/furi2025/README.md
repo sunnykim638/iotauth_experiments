@@ -56,7 +56,7 @@
 
 **$CCS (iotauth_experiments/experiments/ccs2017)**
 
-* Current directory. This directory includes options for exepriments under $CCS/expOptions and contains scripts for copying logs and packet captures (pcap) to $CCS/results directory and scripts for analyzing the results, including availability and expected energy consumption.
+* This directory includes options for exepriments under $CCS/expOptions and contains scripts for copying logs and packet captures (pcap) to $CCS/results directory and scripts for analyzing the results, including availability and expected energy consumption.
 
 **$MOUNT_DIR**
 
@@ -169,14 +169,13 @@
 
   * **IMPORTANT**: Before the first build of ns3, configure it to include examples and tests, enable sudo and python bindings, and optimize the build. Examples include modules for simulation, **tap-matrix-sst** and **tap-mixed-sst**.
     ```
+    cd $NS3
     ./ns3 configure --build-profile=optimized --enable-examples --enable-tests --enable-sudo --enable-python-bindings
+    ./ns3 build
     ```
 
   * To edit the simulator source code, see inside **$TAP** (**$NS3/src/tap-bridge/examples**) and look into simulation files (e.g., **tap-matrix-sst.cc**, **tap-mixed-sst.cc**)
-    ```
-    cd $NS3
-    ./ns3 build
-    
+    ```    
     # To use matrix propagation loss for wifi connections
     ./ns3 run "$TAP/tap-matrix-sst $LXC/tapConfigs.txt"
     
