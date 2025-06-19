@@ -7,10 +7,22 @@
 **$CONF (iotauth_experiments/expConfigs)**
 
 * This directory includes scripts for generating the *ns3Exp.graph*, *devList.txt*, and *commCosts.txt* files using *.input* file which describes Auths and thing, including a list of Auths, a list of things (clients & servers), assignemts (Auth - thing registration), trust relationships between Auths, communication costs, and migration plans.
+* To clone `iotauth_experiments` repository,
+  
+  ```
+  cd $REPO_ROOT
+  git clone https://github.com/iotauth/iotauth_experiments.git
+  ```
   
 **$IOT/examples (iotauth/examples)**
 
 * This directory is for scripts to generate credentials, config files, and Auth databases using *.graph* file generated in $CONF.
+* To clone `iotauth` repository,
+  
+  ```
+  cd $REPO_ROOT
+  git clone https://github.com/iotauth/iotauth.git
+  ```
 
 **$ENTITY ($IOT/entity/node/example_entities)**
 
@@ -27,6 +39,12 @@
 **$NS3 (ns-3-dev)**
 
 * A directory for running the ns-3 network simulator. The network model is under *$TAP* directory (*$NS3/src/tap-bridge/examples*). This simulation model connects linux containers (LXCs), therefore, the simulator must be running before we run LXCs.
+* To download ns3,
+  
+  ```
+  cd $REPO_ROOT
+  git clone https://gitlab.com/nsnam/ns-3-dev.git
+  ```
 
 **$TAP ($NS3/src/tap-bridge/examples)**
 
@@ -160,10 +178,10 @@
     ./ns3 build
     
     # To use matrix propagation loss for wifi connections
-    ./ns3 run tap-matrix-sst --command-template="%s $LXC/tapConfigs.txt"
+    ./ns3 run "$TAP/tap-matrix-sst $LXC/tapConfigs.txt"
     
     # To use positions in x,y,z coordinates for wifi connections
-    ./ns3 run tap-mixed-sst --command-template="%s $LXC/tapConfigs.txt"
+    ./ns3 run "$TAP/tap-matrix-sst $LXC/tapConfigs.txt"
     ```
 
 * To run linux containers (LXCs) for experiments
