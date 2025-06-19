@@ -24,7 +24,7 @@
 
 * This directory includes scripts for generating other scripts to set up, start, stop, and teardown linux containers (LXC, para-virtualmachines). The generation script uses *devList.txt* and *commCosts.txt* files. See [LXC README.md](https://github.com/iotauth/iotauth_experiments/blob/master/network_sim/linux_containers/README.md) for more details.
   
-**$NS3 (bake/source/ns-3.26)**
+**$NS3 (ns-3-dev)**
 
 * A directory for running the ns-3 network simulator. The network model is under *$TAP* directory (*$NS3/src/tap-bridge/examples*). This simulation model connects linux containers (LXCs), therefore, the simulator must be running before we run LXCs.
 
@@ -56,7 +56,7 @@
   export CONF=$EXP/expConfigs
   export CCS=$EXP/experiments/ccs2017
 
-  export NS3=$REPO_ROOT/bake/source/ns-3.26
+  export NS3=$REPO_ROOT/ns-3-dev
   export TAP=$NS3/src/tap-bridge/examples
 
   export NETSIM=$REPO_ROOT/iotauth_experiments/network_sim
